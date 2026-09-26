@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Travel Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>✈ AI Travel Planner</h1>
+    <p>Enter your trip details and get an AI-generated itinerary and budget.</p>
+  </header>
+
+  <main>
+    <!-- FORM -->
+    <section class="card">
+      <form id="tripForm">
+        <label>Destination
+          <input type="text" id="destination" placeholder="e.g. Goa" required>
+        </label>
+
+        <label>Number of Days
+          <input type="number" id="days" placeholder="e.g. 4" min="1" max="14" required>
+        </label>
+
+        <label>Budget (₹)
+          <input type="number" id="budget" placeholder="e.g. 20000" min="1000" required>
+        </label>
+
+        <label>Travel Style
+          <select id="style">
+            <option value="Relaxed">Relaxed</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Cultural">Cultural</option>
+            <option value="Luxury">Luxury</option>
+            <option value="Budget">Budget</option>
+          </select>
+        </label>
+
+        <button type="submit" id="generateBtn">Generate Itinerary</button>
+      </form>
+    </section>
+
+    <!-- LOADING -->
+    <div id="loading" class="hidden">Generating your trip... this may take a few seconds.</div>
+
+    <!-- ERROR -->
+    <div id="errorBox" class="hidden error"></div>
+
+    <!-- RESULTS -->
+    <section id="results" class="hidden">
+      <h2>Your Itinerary</h2>
+      <div id="itineraryContainer"></div>
+
+      <h2>Estimated Budget</h2>
+      <table id="budgetTable"></table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
